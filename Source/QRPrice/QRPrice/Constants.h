@@ -6,8 +6,4 @@
 //  Copyright © 2016 Alec Kretch. All rights reserved.
 //
 
-#ifndef Constants_h
-#define Constants_h
-
-
-#endif /* Constants_h */
+#define EBAY_APP_NAME @"AlecKret-QRPrice-PRD-2d2cad3ef-86adddf1"

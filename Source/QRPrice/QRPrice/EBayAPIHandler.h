@@ -9,11 +9,29 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 
-@interface eBayAPIHandler : NSObject
+@class EBayAPIHandler;
+
+@protocol EBayAPIHandlerDelegate <NSObject>
+
+- (void)getEbayProductTitle:(NSString *)title;
+- (void)getEbayProductImageURL:(NSString *)url;
+- (void)getEbayProductPrice:(float)price;
+
+@end
+
+@interface EBayAPIHandler : NSObject <NSURLConnectionDelegate, NSXMLParserDelegate>
 {
-    NSURLConnection *currentConnection;
+    NSURLConnection *currentConnectionGeneric;
+    NSURLConnection *currentConnectionPricing;
+    NSXMLParser *xmlParserGeneric;
+    NSXMLParser *xmlParserPricing;
 }
 
 @property (retain, nonatomic) NSMutableData *apiReturnXMLData;
+@property (copy, nonatomic) NSString *currentElement;
+@property (nonatomic, weak) id<EBayAPIHandlerDelegate> delegate;
+
+- (void)getGenericInformationForISBN:(NSString *)iSBN;
+- (void)getPricingInformationForISBN:(NSString *)iSBN;
 
 @end

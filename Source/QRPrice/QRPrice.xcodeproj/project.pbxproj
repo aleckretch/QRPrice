@@ -13,7 +13,7 @@
 		8934AED31C600EDE003DD96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED11C600EDE003DD96E /* Main.storyboard */; };
 		8934AED51C600EDE003DD96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED41C600EDE003DD96E /* Assets.xcassets */; };
 		8934AED81C600EDE003DD96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED61C600EDE003DD96E /* LaunchScreen.storyboard */; };
-		8934AEE11C60103F003DD96E /* QRScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934AEE01C60103F003DD96E /* QRScannerViewController.m */; };
+		89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,9 @@
 		8934AED41C600EDE003DD96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8934AED71C600EDE003DD96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8934AED91C600EDE003DD96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8934AEDF1C60103F003DD96E /* QRScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScannerViewController.h; sourceTree = "<group>"; };
-		8934AEE01C60103F003DD96E /* QRScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScannerViewController.m; sourceTree = "<group>"; };
+		89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBayAPIHandler.h; sourceTree = "<group>"; };
+		89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBayAPIHandler.m; sourceTree = "<group>"; };
+		89E6BF691C6ED5A5000629B6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +64,11 @@
 			children = (
 				8934AECB1C600EDE003DD96E /* AppDelegate.h */,
 				8934AECC1C600EDE003DD96E /* AppDelegate.m */,
+				89E6BF691C6ED5A5000629B6 /* Constants.h */,
 				8934AECE1C600EDE003DD96E /* ViewController.h */,
 				8934AECF1C600EDE003DD96E /* ViewController.m */,
-				8934AEDF1C60103F003DD96E /* QRScannerViewController.h */,
-				8934AEE01C60103F003DD96E /* QRScannerViewController.m */,
+				89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */,
+				89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */,
 				8934AED11C600EDE003DD96E /* Main.storyboard */,
 				8934AED41C600EDE003DD96E /* Assets.xcassets */,
 				8934AED61C600EDE003DD96E /* LaunchScreen.storyboard */,
@@ -154,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8934AEE11C60103F003DD96E /* QRScannerViewController.m in Sources */,
+				89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */,
 				8934AED01C600EDE003DD96E /* ViewController.m in Sources */,
 				8934AECD1C600EDE003DD96E /* AppDelegate.m in Sources */,
 				8934AECA1C600EDE003DD96E /* main.m in Sources */,
@@ -304,6 +306,7 @@
 				8934AEDE1C600EDE003DD96E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

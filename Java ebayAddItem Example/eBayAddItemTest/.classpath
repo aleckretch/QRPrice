@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/attributes.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/ebaycalls.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/ebaysdkcore.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/helper.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/activation.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/http.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jaxws-api.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jaxws-rt.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jaxws-tools.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jsr173_api.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jsr181-api.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/jsr250-api.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/mimepull.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/resolver.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/saaj-api.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/saaj-impl.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/serializer.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/sjsxp.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/streambuffer.jar"/>
+	<classpathentry kind="lib" path="/home/mfinley3/eBaySDKJava939/lib/externalLib/xalan.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

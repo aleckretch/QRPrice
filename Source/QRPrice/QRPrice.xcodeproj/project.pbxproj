@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		546F6ECF1C72CD6700F264CC /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F6ECE1C72CD6700F264CC /* CameraView.m */; };
 		8934AECA1C600EDE003DD96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934AEC91C600EDE003DD96E /* main.m */; };
 		8934AECD1C600EDE003DD96E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934AECC1C600EDE003DD96E /* AppDelegate.m */; };
 		8934AED01C600EDE003DD96E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934AECF1C600EDE003DD96E /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		546F6ECD1C72CD6700F264CC /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		546F6ECE1C72CD6700F264CC /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		8934AEC51C600EDE003DD96E /* QRPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8934AEC91C600EDE003DD96E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8934AECB1C600EDE003DD96E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 				89E6BF691C6ED5A5000629B6 /* Constants.h */,
 				8934AECE1C600EDE003DD96E /* ViewController.h */,
 				8934AECF1C600EDE003DD96E /* ViewController.m */,
+				546F6ECD1C72CD6700F264CC /* CameraView.h */,
+				546F6ECE1C72CD6700F264CC /* CameraView.m */,
 				89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */,
 				89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */,
 				8934AED11C600EDE003DD96E /* Main.storyboard */,
@@ -174,6 +179,7 @@
 			files = (
 				89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */,
 				8934AED01C600EDE003DD96E /* ViewController.m in Sources */,
+				546F6ECF1C72CD6700F264CC /* CameraView.m in Sources */,
 				8934AECD1C600EDE003DD96E /* AppDelegate.m in Sources */,
 				8934AECA1C600EDE003DD96E /* main.m in Sources */,
 			);

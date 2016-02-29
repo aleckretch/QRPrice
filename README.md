@@ -1,12 +1,4 @@
 # QRPrice
 Scan a QR code and determine its price on Amazon
 
-Authors:
-
-Alec Kretch
-
-Kyle Knez
-
-Josh Redpath
-
-Mike Finley
+Authors: Alec Kretch, Kyle Knez, Josh Redpath, and Mike Finley

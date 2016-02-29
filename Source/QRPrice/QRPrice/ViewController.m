@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "CameraView.h"
 
 @interface ViewController ()
+
+@property (retain, nonatomic) UIView* cameraView;
+@property (retain, nonatomic) CameraView *cam;
+@property (retain, nonatomic) UIView* mainView;
 
 @end
 
@@ -72,6 +77,15 @@
 }
 
 - (void)setScannerOnWithFrame:(CGRect)frame {
+    
+    self.cam = [[CameraView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/3) superview:self.view delegate:self];
+    
+    self.mainView = [[UIView alloc] initWithFrame:CGRectMake(0, self.cam.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.cam.frame.size.height)];
+    [self.view addSubview:self.mainView];
+    self.mainView.backgroundColor = [UIColor whiteColor];
+    
+    /*
+    
     self.scannerView = [[UIView alloc] initWithFrame:frame];
     
     self.lblDigits = [[UILabel alloc] init];
@@ -118,6 +132,12 @@
     
     [self.view addSubview:self.scannerView];
     
+    /*
+    UIImage* shutterImage = [[UIImage alloc] initWithContentsOfFile:@"ShutterImageOne"];
+   	self.shutterView = [[UIImageView alloc] initWithImage:shutterImage];
+    self.shutterView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/4);
+    [self.view addSubview:self.shutterView];
+    */
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {

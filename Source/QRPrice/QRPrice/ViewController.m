@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CameraView.h"
 
 @interface ViewController ()
 
@@ -55,7 +54,7 @@
     [self setScannerOnWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+20, self.view.frame.size.width, 200)];
     
     //product image
-    self.productImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x+10, self.scannerView.frame.origin.y+self.scannerView.frame.size.height+10, 100, 100)];
+    self.productImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x+10, self.cam.frame.origin.y+self.cam.frame.size.height+10, 100, 100)];
     [self.view addSubview:self.productImageView];
     [self.productImageView setHidden:YES];
     
@@ -73,71 +72,62 @@
     self.lblProductPrice.textColor = [UIColor darkGrayColor];
     [self.view addSubview:self.lblProductPrice];
     [self.lblProductPrice setHidden:YES];
+    
+    self.btnRestart = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.btnRestart addTarget:self action:@selector(onTapButtonRestart) forControlEvents:UIControlEventTouchUpInside];
+    [self.btnRestart setTitle:@"Restart" forState:UIControlStateNormal];
+    [self.btnRestart sizeToFit];
+    [self.btnRestart setFrame:CGRectMake(0, self.lblProductPrice.frame.origin.y+self.lblProductPrice.frame.size.height+10, self.view.frame.size.width, self.btnRestart.frame.size.height)];
+    [self.view addSubview:self.btnRestart];
+    [self.btnRestart setHidden:YES];
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.color = [UIColor darkGrayColor];
+    self.activityIndicator.frame = CGRectMake(0, self.cam.frame.origin.y+self.cam.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-(self.cam.frame.origin.y+self.cam.frame.size.height));
+    [self.view addSubview:self.activityIndicator];
 
 }
 
 - (void)setScannerOnWithFrame:(CGRect)frame {
-    
     self.cam = [[CameraView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/3) superview:self.view delegate:self];
+    self.cam.delegate = self;
     
     self.mainView = [[UIView alloc] initWithFrame:CGRectMake(0, self.cam.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.cam.frame.size.height)];
     [self.view addSubview:self.mainView];
     self.mainView.backgroundColor = [UIColor whiteColor];
-    
-    /*
-    
-    self.scannerView = [[UIView alloc] initWithFrame:frame];
-    
-    self.lblDigits = [[UILabel alloc] init];
-    self.lblDigits.frame = CGRectMake(0, self.scannerView.bounds.size.height - 40, self.scannerView.bounds.size.width, 40);
-    self.lblDigits.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    self.lblDigits.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
-    self.lblDigits.textColor = [UIColor whiteColor];
-    self.lblDigits.textAlignment = NSTextAlignmentCenter;
-    self.lblDigits.text = @"(none)";
-    [self.scannerView addSubview:self.lblDigits];
-    
-    self.highlightView = [[UIView alloc] init];
-    self.highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
-    self.highlightView.layer.borderColor = [[UIColor greenColor] CGColor];
-    self.highlightView.layer.borderWidth = 3;
-    [self.scannerView addSubview: self.highlightView];
-    
-    self.session = [[AVCaptureSession alloc] init];
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError *inputError = nil;
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&inputError];
-    
-    if (inputError != nil) {
-        //No camera
-        return;
+
+}
+
+//this method connects all elements associated with item info
+- (void)setItemInfoHidden:(BOOL)hidden {
+    if (hidden)
+    {
+        [self.lblProductPrice setHidden:YES];
+        [self.lblProductTitle setHidden:YES];
+        [self.productImageView setHidden:YES];
+        self.lblProductPrice.text = @"";
+        self.lblProductTitle.text = @"";
+        self.productImageView.image = nil;
+        [self.btnRestart setHidden:YES];
+    }
+    else
+    {
+        if (self.lblProductPrice.text && self.lblProductTitle.text && self.productImageView.image)
+        {
+            [self.lblProductPrice setHidden:NO];
+            [self.lblProductTitle setHidden:NO];
+            [self.productImageView setHidden:NO];
+            [self.btnRestart setHidden:NO];
+        }
+        [self.activityIndicator stopAnimating];
     }
     
-    [self.session addInput:input];
+}
+
+- (void)onTapButtonRestart {
+    self.checkingPriceIsDisabled = NO;
+    [self setItemInfoHidden:YES];
     
-    AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
-    [output setMetadataObjectsDelegate:self queue: dispatch_get_main_queue()];
-    [self.session addOutput:output];
-    output.metadataObjectTypes = [output availableMetadataObjectTypes];
-    
-    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
-    self.previewLayer.frame = self.scannerView.bounds;
-    self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.scannerView.layer addSublayer:self.previewLayer];
-    
-    [self.session startRunning];
-    
-    [self.scannerView bringSubviewToFront:self.highlightView];
-    [self.scannerView bringSubviewToFront:self.lblDigits];
-    
-    [self.view addSubview:self.scannerView];
-    
-    /*
-    UIImage* shutterImage = [[UIImage alloc] initWithContentsOfFile:@"ShutterImageOne"];
-   	self.shutterView = [[UIImageView alloc] initWithImage:shutterImage];
-    self.shutterView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/4);
-    [self.view addSubview:self.shutterView];
-    */
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
@@ -169,8 +159,10 @@
             }
         }
         
-        if (detectionString != nil)
+        if (detectionString != nil && !self.checkingPriceIsDisabled)
         {
+            self.checkingPriceIsDisabled = YES;
+            [self.activityIndicator startAnimating];
             self.lblDigits.text = detectionString;
             EBayAPIHandler *eBayAPIHandlerGeneric = [[EBayAPIHandler alloc] init];
             [eBayAPIHandlerGeneric getGenericInformationForISBN:detectionString];
@@ -190,24 +182,28 @@
     
 }
 
+- (void)cameraViewDidTurnOn:(CameraView *)controller {
+    self.checkingPriceIsDisabled = NO;
+    
+}
+
 - (void)getEbayProductTitle:(NSString *)title {
-    [self.lblProductTitle setHidden:NO];
     self.lblProductTitle.text = title;
+    [self setItemInfoHidden:NO];
     
 }
 
 - (void)getEbayProductImageURL:(NSString *)url {
-    [self.productImageView setHidden:NO];
     NSURL *imageURL = [NSURL URLWithString:url];
     UIImage *imgProduct = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
     self.productImageView.image = imgProduct;
     self.productImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self setItemInfoHidden:NO];
     
 }
 
 - (void)getEbayProductPrice:(float)price {
     self.price = price;
-    [self.lblProductPrice setHidden:NO];
     
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -215,6 +211,7 @@
     [numberFormatter setMaximumFractionDigits:2];
     NSString *priceWithCommas = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:price]];
     self.lblProductPrice.text = [NSString stringWithFormat:@"Cheapest price on eBay: $%@ USD", priceWithCommas];
+    [self setItemInfoHidden:NO];
     
 }
 

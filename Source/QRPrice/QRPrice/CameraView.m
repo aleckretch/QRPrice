@@ -110,6 +110,8 @@
     self.stopButton.hidden = !self.stopButton.hidden;
     [self.session startRunning];
     
+    [self.delegate cameraViewDidTurnOn:self];
+    
 }
 
 -(void)stop

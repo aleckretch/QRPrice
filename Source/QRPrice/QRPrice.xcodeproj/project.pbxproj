@@ -14,6 +14,8 @@
 		8934AED51C600EDE003DD96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED41C600EDE003DD96E /* Assets.xcassets */; };
 		8934AED81C600EDE003DD96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED61C600EDE003DD96E /* LaunchScreen.storyboard */; };
 		89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */; };
+		89E6BF711C726622000629B6 /* img_barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6BF6F1C726622000629B6 /* img_barcode.png */; };
+		89E6BF721C726622000629B6 /* img_barcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6BF701C726622000629B6 /* img_barcode@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBayAPIHandler.h; sourceTree = "<group>"; };
 		89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBayAPIHandler.m; sourceTree = "<group>"; };
 		89E6BF691C6ED5A5000629B6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		89E6BF6F1C726622000629B6 /* img_barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_barcode.png; sourceTree = "<group>"; };
+		89E6BF701C726622000629B6 /* img_barcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_barcode@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				8934AED41C600EDE003DD96E /* Assets.xcassets */,
 				8934AED61C600EDE003DD96E /* LaunchScreen.storyboard */,
 				8934AED91C600EDE003DD96E /* Info.plist */,
+				89E6BF6A1C726612000629B6 /* Images */,
 				8934AEC81C600EDE003DD96E /* Supporting Files */,
 			);
 			path = QRPrice;
@@ -84,6 +89,15 @@
 				8934AEC91C600EDE003DD96E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89E6BF6A1C726612000629B6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				89E6BF6F1C726622000629B6 /* img_barcode.png */,
+				89E6BF701C726622000629B6 /* img_barcode@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +159,9 @@
 			files = (
 				8934AED81C600EDE003DD96E /* LaunchScreen.storyboard in Resources */,
 				8934AED51C600EDE003DD96E /* Assets.xcassets in Resources */,
+				89E6BF711C726622000629B6 /* img_barcode.png in Resources */,
 				8934AED31C600EDE003DD96E /* Main.storyboard in Resources */,
+				89E6BF721C726622000629B6 /* img_barcode@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,8 +15,10 @@
 
 @property (retain, nonatomic) IBOutlet AVCaptureSession *session;
 @property (retain, nonatomic) IBOutlet AVCaptureVideoPreviewLayer *previewLayer;
+@property (retain, nonatomic) IBOutlet NSString *currentCategoryId;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (retain, nonatomic) IBOutlet UIImageView *productImageView;
+@property (retain, nonatomic) IBOutlet UIButton *btnEbay;
 @property (retain, nonatomic) IBOutlet UIButton *btnRestart;
 @property (retain, nonatomic) IBOutlet UILabel *lblDigits;
 @property (retain, nonatomic) IBOutlet UILabel *lblProductPrice;

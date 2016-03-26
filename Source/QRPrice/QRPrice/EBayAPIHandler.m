@@ -54,7 +54,7 @@
     }
     else if (parser == xmlParserPricing)
     {
-        if ([elementName isEqualToString:@"convertedCurrentPrice"]) //will always be USD
+        if ([elementName isEqualToString:@"convertedCurrentPrice"] || [elementName isEqualToString:@"categoryId"]) //will always be USD
         {
             self.currentElement = [[NSString alloc] initWithString:elementName];
         }
@@ -75,6 +75,10 @@
     {
         float price = [string floatValue];
         [self.delegate getEbayProductPrice:price];
+    }
+    else if ([self.currentElement isEqualToString:@"categoryId"])
+    {
+        [self.delegate getEbayCategoryId:string];
     }
     self.currentElement = nil;
     

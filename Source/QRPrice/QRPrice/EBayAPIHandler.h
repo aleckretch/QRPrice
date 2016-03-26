@@ -15,6 +15,7 @@
 
 - (void)getEbayProductTitle:(NSString *)title;
 - (void)getEbayProductImageURL:(NSString *)url;
+- (void)getEbayCategoryId:(NSString *)categoryId;
 - (void)getEbayProductPrice:(float)price;
 
 @end

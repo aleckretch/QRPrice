@@ -60,7 +60,7 @@
     
     //product title label
     self.lblProductTitle = [[UILabel alloc] initWithFrame:CGRectMake(self.productImageView.frame.origin.x+self.productImageView.frame.size.width+10, self.productImageView.frame.origin.y, self.view.frame.size.width-(self.productImageView.frame.origin.x+self.productImageView.frame.size.width+10)-(10), self.productImageView.frame.size.height)];
-    self.lblProductTitle.font = [UIFont systemFontOfSize:18]; //TODO custom font
+    self.lblProductTitle.font = [UIFont fontWithName:@"OpenSans-Bold" size:14];
     self.lblProductTitle.textColor = [UIColor darkGrayColor];
     self.lblProductTitle.numberOfLines = 4;
     [self.view addSubview:self.lblProductTitle];
@@ -68,16 +68,19 @@
     
     //product price label
     self.lblProductPrice = [[UILabel alloc] initWithFrame:CGRectMake(10, self.productImageView.frame.origin.y+self.productImageView.frame.size.height+10, self.view.frame.size.width-(10*2), 20)];
-    self.lblProductPrice.font = [UIFont systemFontOfSize:18]; //TODO custom font
+    self.lblProductPrice.font = [UIFont fontWithName:@"OpenSans" size:14];
     self.lblProductPrice.textColor = [UIColor darkGrayColor];
     [self.view addSubview:self.lblProductPrice];
     [self.lblProductPrice setHidden:YES];
     
-    self.btnRestart = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //ebay button
+    self.btnEbay = [self getButtonWithColor:COLOR_GREEN title:@"Post to eBay" frame:CGRectMake(10, self.lblProductPrice.frame.origin.y+self.lblProductPrice.frame.size.height+10, self.view.frame.size.width-20, 40)];
+    [self.btnEbay addTarget:self action:@selector(onTapButtonEbay) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btnEbay];
+    [self.btnEbay setHidden:YES];
+    
+    self.btnRestart = [self getButtonWithColor:COLOR_RED title:@"Restart" frame:CGRectMake(10, self.btnEbay.frame.origin.y+self.btnEbay.frame.size.height+10, self.view.frame.size.width-20, 40)];
     [self.btnRestart addTarget:self action:@selector(onTapButtonRestart) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnRestart setTitle:@"Restart" forState:UIControlStateNormal];
-    [self.btnRestart sizeToFit];
-    [self.btnRestart setFrame:CGRectMake(0, self.lblProductPrice.frame.origin.y+self.lblProductPrice.frame.size.height+10, self.view.frame.size.width, self.btnRestart.frame.size.height)];
     [self.view addSubview:self.btnRestart];
     [self.btnRestart setHidden:YES];
     
@@ -107,19 +110,34 @@
         [self.productImageView setHidden:YES];
         self.lblProductPrice.text = @"";
         self.lblProductTitle.text = @"";
+        self.currentCategoryId = @"";
         self.productImageView.image = nil;
+        [self.btnEbay setHidden:YES];
         [self.btnRestart setHidden:YES];
     }
     else
     {
-        if (self.lblProductPrice.text && self.lblProductTitle.text && self.productImageView.image)
+        if (self.lblProductPrice.text && self.lblProductTitle.text && self.productImageView.image && self.currentCategoryId)
         {
             [self.lblProductPrice setHidden:NO];
             [self.lblProductTitle setHidden:NO];
             [self.productImageView setHidden:NO];
+            [self.btnEbay setHidden:NO];
             [self.btnRestart setHidden:NO];
         }
         [self.activityIndicator stopAnimating];
+    }
+    
+}
+
+- (void)onTapButtonEbay {
+    NSString *urlString = [NSString stringWithFormat:@"http://csr.ebay.com/sell/list.jsf?usecase=create&mode=AddItem&categoryId=%@&rp=srp&title=%@", self.currentCategoryId, self.lblProductTitle.text];
+    NSString *urlStringHtml = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlStringHtml];
+    
+    //NOTE FOR KYLE: REPLACE THIS BELOW CODE WITH THE CALL TO OPEN THE WEBVIEW CONTROLLER
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
     }
     
 }
@@ -202,6 +220,33 @@
     
 }
 
+- (UIButton *)getButtonWithColor:(UIColor *)color title:(NSString *)title frame:(CGRect)frame {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.clipsToBounds = YES;
+    btn.exclusiveTouch = YES;
+    btn.frame = frame;
+    btn.layer.cornerRadius = 4.0;
+    [btn setBackgroundImage:[self getImageWithColor:color frame:CGRectMake(0, 0, frame.size.width, frame.size.height)] forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTintColor:[UIColor whiteColor]];
+    [btn.titleLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:16]];
+    
+    return btn;
+    
+}
+
+- (UIImage *)getImageWithColor:(UIColor *)color frame:(CGRect)frame {
+    UIGraphicsBeginImageContext(frame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, frame);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
+}
+
 - (void)getEbayProductPrice:(float)price {
     self.price = price;
     
@@ -211,6 +256,12 @@
     [numberFormatter setMaximumFractionDigits:2];
     NSString *priceWithCommas = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:price]];
     self.lblProductPrice.text = [NSString stringWithFormat:@"Cheapest price on eBay: $%@ USD", priceWithCommas];
+    [self setItemInfoHidden:NO];
+    
+}
+
+- (void)getEbayCategoryId:(NSString *)categoryId {
+    self.currentCategoryId = categoryId;
     [self setItemInfoHidden:NO];
     
 }

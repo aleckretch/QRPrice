@@ -1,0 +1,3 @@
+http://csr.ebay.com/sell/list.jsf?usecase=create&mode=AddItem&categoryId=%@&rp=srp&title=%@
+
+NSString *ebayLink = [NSString stringWithFormat:@"http://csr.ebay.com/sell/list.jsf?usecase=create&mode=AddItem&categoryId=%@&rp=srp&title=%@", category, title];

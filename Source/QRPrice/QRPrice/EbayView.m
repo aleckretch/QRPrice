@@ -84,4 +84,11 @@
     }];
 }
 
+-(void)relaodUrl:(NSString*)url
+{
+    NSURL* mainURL = [[NSURL alloc] initWithString:url];
+    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:mainURL];
+    [_webView loadRequest:request];
+}
+
 @end

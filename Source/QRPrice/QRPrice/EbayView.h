@@ -13,5 +13,6 @@
 - (instancetype)initWithFrame:(CGRect)frame url:(NSString*)url;
 -(void)show;
 -(void)dismiss;
+-(void)relaodUrl:(NSString*)url;
 
 @end

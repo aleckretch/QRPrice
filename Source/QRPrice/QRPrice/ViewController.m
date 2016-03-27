@@ -20,8 +20,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setLayout];
+    
+    
+    //UNCOMMMENT WHEN READY
+    //[self setLayout];
+    
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //WEB VIEW EXAMPLE
+    
+   	EbayView* ebayView = [[EbayView alloc] initWithFrame:CGRectMake(100, 100, 400, 400) url:@"https://www.google.com"];
+    [self.view addSubview:ebayView];
+    
 }
 
 /*

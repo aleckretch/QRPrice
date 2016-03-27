@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "CameraView.h"
 #import "EBayAPIHandler.h"
+#import "EbayView.h"
 
 @interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, CameraViewDelegate, EBayAPIHandlerDelegate>
 

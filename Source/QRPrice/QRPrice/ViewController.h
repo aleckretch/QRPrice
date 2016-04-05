@@ -11,8 +11,9 @@
 #import "CameraView.h"
 #import "EBayAPIHandler.h"
 #import "EbayView.h"
+#import "BackView.h"
 
-@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, CameraViewDelegate, EBayAPIHandlerDelegate>
+@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, CameraViewDelegate, EBayAPIHandlerDelegate, EbayViewDelegate>
 
 @property (retain, nonatomic) IBOutlet AVCaptureSession *session;
 @property (retain, nonatomic) IBOutlet AVCaptureVideoPreviewLayer *previewLayer;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5422231A1CAC513900C790DA /* BackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 542223191CAC513900C790DA /* BackView.m */; };
+		542223201CAC570E00C790DA /* EbayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422231F1CAC570E00C790DA /* EbayCell.m */; };
 		546F6ECF1C72CD6700F264CC /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F6ECE1C72CD6700F264CC /* CameraView.m */; };
 		54F5C5CC1CA83DAE0049A305 /* EbayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F5C5CB1CA83DAE0049A305 /* EbayView.m */; };
 		8934AECA1C600EDE003DD96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934AEC91C600EDE003DD96E /* main.m */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		542223181CAC513900C790DA /* BackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackView.h; sourceTree = "<group>"; };
+		542223191CAC513900C790DA /* BackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackView.m; sourceTree = "<group>"; };
+		5422231E1CAC570E00C790DA /* EbayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EbayCell.h; sourceTree = "<group>"; };
+		5422231F1CAC570E00C790DA /* EbayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EbayCell.m; sourceTree = "<group>"; };
 		546F6ECD1C72CD6700F264CC /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		546F6ECE1C72CD6700F264CC /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		54F5C5CA1CA83DAE0049A305 /* EbayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EbayView.h; sourceTree = "<group>"; };
@@ -85,6 +91,10 @@
 				546F6ECE1C72CD6700F264CC /* CameraView.m */,
 				54F5C5CA1CA83DAE0049A305 /* EbayView.h */,
 				54F5C5CB1CA83DAE0049A305 /* EbayView.m */,
+				542223181CAC513900C790DA /* BackView.h */,
+				542223191CAC513900C790DA /* BackView.m */,
+				5422231E1CAC570E00C790DA /* EbayCell.h */,
+				5422231F1CAC570E00C790DA /* EbayCell.m */,
 				89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */,
 				89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */,
 				8934AED11C600EDE003DD96E /* Main.storyboard */,
@@ -200,9 +210,11 @@
 			files = (
 				89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */,
 				54F5C5CC1CA83DAE0049A305 /* EbayView.m in Sources */,
+				5422231A1CAC513900C790DA /* BackView.m in Sources */,
 				8934AED01C600EDE003DD96E /* ViewController.m in Sources */,
 				546F6ECF1C72CD6700F264CC /* CameraView.m in Sources */,
 				8934AECD1C600EDE003DD96E /* AppDelegate.m in Sources */,
+				542223201CAC570E00C790DA /* EbayCell.m in Sources */,
 				8934AECA1C600EDE003DD96E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

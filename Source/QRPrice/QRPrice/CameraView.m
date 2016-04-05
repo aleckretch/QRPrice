@@ -86,6 +86,8 @@
         self.stopButton.hidden = true;
         [self addSubview:self.stopButton];
         
+        [self swap];
+        
     }
     return self;
 }
@@ -93,7 +95,6 @@
 -(void)swap
 {
     if (!self.cameraActive) {
-        NSLog(@"Did swap\n");
         [self start];
         return;
     }

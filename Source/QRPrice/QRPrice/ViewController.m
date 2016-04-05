@@ -13,6 +13,8 @@
 @property (retain, nonatomic) UIView* cameraView;
 @property (retain, nonatomic) CameraView *cam;
 @property (retain, nonatomic) UIView* mainView;
+@property (retain, nonatomic) EbayView* ebayView;
+@property (retain, nonatomic) BackView* backView;
 
 @end
 
@@ -20,17 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    //UNCOMMMENT WHEN READY
-    //[self setLayout];
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    //WEB VIEW EXAMPLE
-    
-   	EbayView* ebayView = [[EbayView alloc] initWithFrame:CGRectMake(100, 100, 400, 400) url:@"https://www.google.com"];
-    [self.view addSubview:ebayView];
+
+    [self setLayout];
     
 }
 
@@ -141,6 +134,8 @@
 }
 
 - (void)onTapButtonEbay {
+    
+    /*
     NSString *urlString = [NSString stringWithFormat:@"http://csr.ebay.com/sell/list.jsf?usecase=create&mode=AddItem&categoryId=%@&rp=srp&title=%@", self.currentCategoryId, self.lblProductTitle.text];
     NSString *urlStringHtml = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:urlStringHtml];
@@ -148,6 +143,28 @@
     //NOTE FOR KYLE: REPLACE THIS BELOW CODE WITH THE CALL TO OPEN THE WEBVIEW CONTROLLER
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
+    }
+    */
+    
+    
+    //TODO: ABOVE
+    NSString *urlString = [NSString stringWithFormat:@"http://csr.ebay.com/sell/list.jsf?usecase=create&mode=AddItem&categoryId=%@&rp=srp&title=%@", self.currentCategoryId, self.lblProductTitle.text];
+    NSString *urlStringHtml = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    if (!self.ebayView)
+    {
+        CGRect rect = CGRectMake(25, self.view.frame.size.width/12, self.view.frame.size.width - 50, self.view.frame.size.height / 2);
+        self.backView = [[BackView alloc] init];
+        self.ebayView = [[EbayView alloc] initWithFrame:rect url:urlStringHtml];
+        self.ebayView.delegate = self;
+        [self.view addSubview:self.backView];
+        [self.view addSubview:self.ebayView];
+    }
+    else
+    {
+        [self.ebayView relaodUrl:urlStringHtml];
+        [self.backView show];
+        [self.ebayView show];
     }
     
 }
@@ -183,6 +200,7 @@
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 // TODO: UNComment this if you want it to stop when it finds a bar code.
                 // [session stopRunning];
+                [self.cam stop];
                 break;
             }
         }
@@ -198,6 +216,7 @@
             EBayAPIHandler *eBayAPIHandlerPricing = [[EBayAPIHandler alloc] init];
             [eBayAPIHandlerPricing getPricingInformationForISBN:detectionString];
             eBayAPIHandlerPricing.delegate = self;
+            NSLog(@"Getting information\n");
             break;
         }
         else
@@ -276,9 +295,11 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)ebayViewDidDismiss
+{
+    [_backView hide];
 }
+
+
 
 @end

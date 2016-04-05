@@ -30,6 +30,8 @@
         // Set points
         self.showPoint = CGPointMake(frame.origin.x, frame.origin.y);
         self.hidePoint = CGPointMake(0, [[UIScreen mainScreen] bounds].size.height);
+        
+        self.backgroundColor = [UIColor whiteColor];
     
     	// Close button
     	_button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 25)];
@@ -61,7 +63,6 @@
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"Did start loading\n");
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
@@ -72,6 +73,7 @@
 
 -(void)dismiss
 {
+    [_delegate ebayViewDidDismiss];
     [UIView animateWithDuration:0.5 animations:^{
         self.frame = CGRectMake(_hidePoint.x, _hidePoint.y, self.frame.size.width, self.frame.size.height);
     }];

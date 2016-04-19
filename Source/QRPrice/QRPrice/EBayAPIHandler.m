@@ -54,7 +54,7 @@
     }
     else if (parser == xmlParserPricing)
     {
-        if ([elementName isEqualToString:@"convertedCurrentPrice"] || [elementName isEqualToString:@"categoryId"]) //will always be USD
+        if ([elementName isEqualToString:@"convertedCurrentPrice"] || [elementName isEqualToString:@"categoryId"] || [elementName isEqualToString:@"totalEntries"]) //covertedCurrentPrice will always be USD
         {
             self.currentElement = [[NSString alloc] initWithString:elementName];
         }
@@ -63,7 +63,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    if([self.currentElement isEqualToString:@"Title"])
+    if ([self.currentElement isEqualToString:@"Title"])
     {
         [self.delegate getEbayProductTitle:string];
     }
@@ -79,6 +79,11 @@
     else if ([self.currentElement isEqualToString:@"categoryId"])
     {
         [self.delegate getEbayCategoryId:string];
+    }
+    else if ([self.currentElement isEqualToString:@"totalEntries"])
+    {
+        int entries = [string intValue];
+        [self.delegate getEbayTotalEntries:entries];
     }
     self.currentElement = nil;
     

@@ -13,10 +13,11 @@
 
 @protocol EBayAPIHandlerDelegate <NSObject>
 
-- (void)getEbayProductTitle:(NSString *)title;
-- (void)getEbayProductImageURL:(NSString *)url;
 - (void)getEbayCategoryId:(NSString *)categoryId;
+- (void)getEbayProductImageURL:(NSString *)url;
 - (void)getEbayProductPrice:(float)price;
+- (void)getEbayProductTitle:(NSString *)title;
+- (void)getEbayTotalEntries:(int)entries;
 
 @end
 

@@ -17,11 +17,17 @@
 		8934AED31C600EDE003DD96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED11C600EDE003DD96E /* Main.storyboard */; };
 		8934AED51C600EDE003DD96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED41C600EDE003DD96E /* Assets.xcassets */; };
 		8934AED81C600EDE003DD96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934AED61C600EDE003DD96E /* LaunchScreen.storyboard */; };
+		89705F281CC5EAFC00364348 /* btn_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 89705F241CC5EAFC00364348 /* btn_cancel.png */; };
+		89705F291CC5EAFC00364348 /* btn_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89705F251CC5EAFC00364348 /* btn_cancel@2x.png */; };
+		89705F2A1CC5EAFC00364348 /* btn_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 89705F261CC5EAFC00364348 /* btn_history.png */; };
+		89705F2B1CC5EAFC00364348 /* btn_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89705F271CC5EAFC00364348 /* btn_history@2x.png */; };
+		89705F2E1CC5F0AB00364348 /* img_barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 89705F2C1CC5F0AB00364348 /* img_barcode.png */; };
+		89705F2F1CC5F0AB00364348 /* img_barcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89705F2D1CC5F0AB00364348 /* img_barcode@2x.png */; };
+		89705F321CC6066B00364348 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89705F311CC6066B00364348 /* HistoryViewController.m */; };
+		89705F351CC60E6F00364348 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89705F341CC60E6F00364348 /* HistoryTableViewCell.m */; };
 		89B100A61CA73807003328AA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89B100A41CA73807003328AA /* OpenSans-Bold.ttf */; };
 		89B100A71CA73807003328AA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89B100A51CA73807003328AA /* OpenSans-Regular.ttf */; };
 		89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */; };
-		89E6BF711C726622000629B6 /* img_barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6BF6F1C726622000629B6 /* img_barcode.png */; };
-		89E6BF721C726622000629B6 /* img_barcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6BF701C726622000629B6 /* img_barcode@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +49,21 @@
 		8934AED41C600EDE003DD96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8934AED71C600EDE003DD96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8934AED91C600EDE003DD96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89705F241CC5EAFC00364348 /* btn_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cancel.png; sourceTree = "<group>"; };
+		89705F251CC5EAFC00364348 /* btn_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_cancel@2x.png"; sourceTree = "<group>"; };
+		89705F261CC5EAFC00364348 /* btn_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_history.png; sourceTree = "<group>"; };
+		89705F271CC5EAFC00364348 /* btn_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_history@2x.png"; sourceTree = "<group>"; };
+		89705F2C1CC5F0AB00364348 /* img_barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_barcode.png; sourceTree = "<group>"; };
+		89705F2D1CC5F0AB00364348 /* img_barcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_barcode@2x.png"; sourceTree = "<group>"; };
+		89705F301CC6066B00364348 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		89705F311CC6066B00364348 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		89705F331CC60E6F00364348 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		89705F341CC60E6F00364348 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		89B100A41CA73807003328AA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		89B100A51CA73807003328AA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBayAPIHandler.h; sourceTree = "<group>"; };
 		89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBayAPIHandler.m; sourceTree = "<group>"; };
 		89E6BF691C6ED5A5000629B6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		89E6BF6F1C726622000629B6 /* img_barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_barcode.png; sourceTree = "<group>"; };
-		89E6BF701C726622000629B6 /* img_barcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_barcode@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +111,16 @@
 				5422231F1CAC570E00C790DA /* EbayCell.m */,
 				89E6BF661C6ED4FF000629B6 /* EBayAPIHandler.h */,
 				89E6BF671C6ED4FF000629B6 /* EBayAPIHandler.m */,
+				89705F301CC6066B00364348 /* HistoryViewController.h */,
+				89705F311CC6066B00364348 /* HistoryViewController.m */,
+				89705F331CC60E6F00364348 /* HistoryTableViewCell.h */,
+				89705F341CC60E6F00364348 /* HistoryTableViewCell.m */,
 				8934AED11C600EDE003DD96E /* Main.storyboard */,
 				8934AED41C600EDE003DD96E /* Assets.xcassets */,
 				8934AED61C600EDE003DD96E /* LaunchScreen.storyboard */,
 				8934AED91C600EDE003DD96E /* Info.plist */,
+				89705F1F1CC5EA8500364348 /* Images */,
 				89B100A31CA73807003328AA /* Fonts */,
-				89E6BF6A1C726612000629B6 /* Images */,
 				8934AEC81C600EDE003DD96E /* Supporting Files */,
 			);
 			path = QRPrice;
@@ -116,6 +134,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		89705F1F1CC5EA8500364348 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				89705F2C1CC5F0AB00364348 /* img_barcode.png */,
+				89705F2D1CC5F0AB00364348 /* img_barcode@2x.png */,
+				89705F241CC5EAFC00364348 /* btn_cancel.png */,
+				89705F251CC5EAFC00364348 /* btn_cancel@2x.png */,
+				89705F261CC5EAFC00364348 /* btn_history.png */,
+				89705F271CC5EAFC00364348 /* btn_history@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		89B100A31CA73807003328AA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,15 +154,6 @@
 				89B100A51CA73807003328AA /* OpenSans-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		89E6BF6A1C726612000629B6 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				89E6BF6F1C726622000629B6 /* img_barcode.png */,
-				89E6BF701C726622000629B6 /* img_barcode@2x.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,11 +215,15 @@
 			files = (
 				8934AED81C600EDE003DD96E /* LaunchScreen.storyboard in Resources */,
 				8934AED51C600EDE003DD96E /* Assets.xcassets in Resources */,
+				89705F2E1CC5F0AB00364348 /* img_barcode.png in Resources */,
+				89705F281CC5EAFC00364348 /* btn_cancel.png in Resources */,
+				89705F2F1CC5F0AB00364348 /* img_barcode@2x.png in Resources */,
+				89705F2A1CC5EAFC00364348 /* btn_history.png in Resources */,
+				89705F2B1CC5EAFC00364348 /* btn_history@2x.png in Resources */,
 				89B100A61CA73807003328AA /* OpenSans-Bold.ttf in Resources */,
 				89B100A71CA73807003328AA /* OpenSans-Regular.ttf in Resources */,
-				89E6BF711C726622000629B6 /* img_barcode.png in Resources */,
 				8934AED31C600EDE003DD96E /* Main.storyboard in Resources */,
-				89E6BF721C726622000629B6 /* img_barcode@2x.png in Resources */,
+				89705F291CC5EAFC00364348 /* btn_cancel@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89705F351CC60E6F00364348 /* HistoryTableViewCell.m in Sources */,
 				89E6BF681C6ED4FF000629B6 /* EBayAPIHandler.m in Sources */,
 				54F5C5CC1CA83DAE0049A305 /* EbayView.m in Sources */,
+				89705F321CC6066B00364348 /* HistoryViewController.m in Sources */,
 				5422231A1CAC513900C790DA /* BackView.m in Sources */,
 				8934AED01C600EDE003DD96E /* ViewController.m in Sources */,
 				546F6ECF1C72CD6700F264CC /* CameraView.m in Sources */,

@@ -171,9 +171,6 @@
             [self.btnRestart setHidden:NO];
             [self.activityIndicator stopAnimating];
         }
-        else {
-            NSLog(@"%@ %@ %@ %@ %@ %@", self.lblProductPrice.text, self.lblProductTitle.text, self.productImageView.image, self.currentCategoryId, self.lblEntries.text, self.iSBN);
-        }
     }
     
 }
@@ -186,8 +183,6 @@
     [arrayHistory addObject:mostRecent];
     [[NSUserDefaults standardUserDefaults] setObject:arrayHistory forKey:@"History"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    self.iSBN = @"";
     
 }
 

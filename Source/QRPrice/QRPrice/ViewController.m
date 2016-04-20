@@ -149,6 +149,7 @@
         self.lblProductTitle.text = @"";
         self.currentCategoryId = @"";
         self.lblProductPrice.text = @"";
+        self.iSBN = @"";
         self.productImageView.image = nil;
         [self.btnEbay setHidden:YES];
         [self.btnRestart setHidden:YES];
@@ -156,7 +157,7 @@
     }
     else
     {
-        if (self.lblProductPrice.text.length > 0 && self.lblProductTitle.text.length > 0 && self.productImageView.image && self.currentCategoryId.length > 0 && self.lblEntries.text.length > 0)
+        if (self.lblProductPrice.text.length > 0 && self.lblProductTitle.text.length > 0 && self.productImageView.image && self.currentCategoryId.length > 0 && self.lblEntries.text.length > 0 && self.iSBN.length > 0)
         {
             if (!self.historySaved) {
                 [self saveHistory];

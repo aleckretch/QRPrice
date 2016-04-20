@@ -33,6 +33,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *lblProductPrice;
 @property (retain, nonatomic) IBOutlet UILabel *lblProductTitle;
 @property (retain, nonatomic) IBOutlet UILabel *lblRecommendedPrice;
+@property (retain, nonatomic) IBOutlet UILabel *lblScan;
 @property (retain, nonatomic) IBOutlet UIView *contentView;
 @property (retain, nonatomic) IBOutlet UIView *highlightView;
 @property (retain, nonatomic) IBOutlet UIView *scannerView;

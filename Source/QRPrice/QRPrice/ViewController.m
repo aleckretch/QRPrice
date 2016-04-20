@@ -38,6 +38,14 @@
     [self.contentView addSubview:self.productImageView];
     [self.productImageView setHidden:YES];
     
+    //scan label
+    self.lblScan = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
+    self.lblScan.font = [UIFont fontWithName:@"OpenSans-Bold" size:18];
+    self.lblScan.textColor = [UIColor darkGrayColor];
+    self.lblScan.text = @"Scan a barcode to begin!";
+    self.lblScan.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:self.lblScan];
+    
     //product title label
     self.lblProductTitle = [[UILabel alloc] initWithFrame:CGRectMake(self.productImageView.frame.origin.x+self.productImageView.frame.size.width+10, self.productImageView.frame.origin.y, self.view.frame.size.width-(self.productImageView.frame.origin.x+self.productImageView.frame.size.width+10)-(10), self.productImageView.frame.size.height)];
     self.lblProductTitle.font = [UIFont fontWithName:@"OpenSans-Bold" size:14];
@@ -131,6 +139,7 @@
 - (void)setItemInfoHidden:(BOOL)hidden {
     if (hidden)
     {
+        [self.lblScan setHidden:NO];
         [self.lblProductPrice setHidden:YES];
         [self.lblProductTitle setHidden:YES];
         [self.productImageView setHidden:YES];
@@ -290,6 +299,7 @@
     [self onTapButtonCancel]; //ensure it is on content view
     self.checkingPriceIsDisabled = YES;
     [self setItemInfoHidden:YES];
+    [self.lblScan setHidden:YES];
     [self.activityIndicator startAnimating];
     self.lblDigits.text = iSBN;
     EBayAPIHandler *eBayAPIHandlerGeneric = [[EBayAPIHandler alloc] init];
